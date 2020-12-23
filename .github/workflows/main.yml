@@ -1,9 +1,13 @@
-name: C/C++ CI
+name: rust
 
 on:
   push:
-    branches:
-    - master
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  CARGO_TERM_COLOR: always
 
 jobs:
   build:
@@ -11,14 +15,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: packges
-      run: sudo apt install -y libcurl3 g++7 cppcheck iwyu valgrind clang-tidy-6.0 libclang-6.0-dev libboost-all-dev
-    - name: kcov
-      run: wget https://github.com/SimonKagstrom/kcov/archive/v36.tar.gz && tar xzf v36.tar.gz && cd kcov-36 && mkdir build && cd build && cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/.kcov -DCMAKE_BUILD_TYPE=Release && make -j2 &&  make install
-    - name: cmake
-      run: cmake -H. -Bbuild -DCMAKE_EXPORT_COMPILE_COMMANDS=1 -DCMAKE_BUILD_TYPE=FastDebug
-    - name: make
-      run: cmake --build build/ --target
-    - name: test
-      run: cd build && ctest
+    - uses: actions/checkout@v2
+    - name: Build
+      run: cargo build --verbose
+    - name: Run tests
+      run: cargo test --verbose
