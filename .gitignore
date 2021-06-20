@@ -1,0 +1,10 @@
+target
+vendor
+.dirnev
+flake.lock
+Cargo.lock
+
+
+# Added by cargo
+
+/target
