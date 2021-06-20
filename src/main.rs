@@ -3,7 +3,7 @@ extern crate clap;
 use clap::{App, Arg, SubCommand};
 
 fn main() {
-    let matches = App::new("papir")
+    let matches = App::new("lexo")
         .version("0.1")
         .about("Research paper and bibliography manager")
         .arg(
@@ -32,6 +32,14 @@ fn main() {
                         .long("from")
                         .takes_value(true)
                         .value_name("TYPE"),
+                )
+                .arg(
+                    Arg::with_name("meta")
+                        .help("Change metadata: author, title, year...")
+                        .short("m")
+                        .long("meta")
+                        .takes_value(true)
+                        .value_name("AUTHOR:'Name Surname'"),
                 )
                 .arg(
                     Arg::with_name("input")
