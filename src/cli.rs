@@ -14,38 +14,38 @@ fn string_to_unsafe_static_str(s: String) -> &'static str {
 
 pub fn build_cli(show_logo: bool) -> App<'static, 'static> {
     let logo: String = if show_logo { "
-                   ▄".truecolor(0, 120, 200).to_string().as_str()+"                                         ▄".truecolor(75, 200, 0).to_string().as_str()+"
+                   ▄".truecolor(0, 120, 200).to_string()+"                                         ▄".truecolor(75, 200, 0).to_string().as_str()+"
                    ▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"                                    ▄▓▒▒".truecolor(75, 200, 0).to_string().as_str()+"
                    ▒▒▒▒▓▄".truecolor(0, 120, 200).to_string().as_str()+"                               ▄▓▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"
                    ▒▒▒▒▒▒▓▄".truecolor(0, 120, 200).to_string().as_str()+"                           ▄▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"
-          ▓▓▄▄".truecolor(255, 50, 0).to_string()+"     ▒▒▒▒▒▒▒▒▓▄".truecolor(0, 120, 200).to_string().as_str()+"                       ▄▓▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"     ▄▄▓▌".truecolor(160, 0, 200).to_string().as_str()+"
-          ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"                     ▓▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▌".truecolor(160, 0, 200).to_string().as_str()+"
-          ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▓▄".truecolor(0, 120, 200).to_string().as_str()+"                 ▄▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"
- ▄▄▄  ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▄".truecolor(0, 120, 200).to_string().as_str()+"               ▓▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"     ▄▄▄".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"             ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▓▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"   ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"           ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▓▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"         ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"       ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄".truecolor(0, 120, 200).to_string().as_str()+"     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"     ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string()+"     ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▀".truecolor(75, 200, 0).to_string().as_str()+"     ▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▌".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▓▓▄".truecolor(255, 50, 0).to_string()+"     ▀▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓".truecolor(75, 200, 0).to_string().as_str()+"      ▄▓▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▓".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▓▓▓▓▄".truecolor(255, 50, 0).to_string()+"      ▓▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▒▒▀".truecolor(75, 200, 0).to_string().as_str()+"     ▄▓▓▓▓▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▒".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▓▓▓▓▓▓▓▄".truecolor(255, 50, 0).to_string()+"     ▓▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒▒▒▒▒▒▒▒▀".truecolor(75, 200, 0).to_string().as_str()+"     ▄▓▓▓▓▓▓▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▒".truecolor(0, 200, 160).to_string().as_str()+"       ▀▓▓▓▓▓▓▓▓▓▄".truecolor(255, 50, 0).to_string()+"     ▓▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▓".truecolor(75, 200, 0).to_string().as_str()+"     ▄▓▓▓▓▓▓▓▓▀▀".truecolor(160, 0, 200).to_string().as_str()+"       ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▒▓▄".truecolor(0, 200, 160).to_string().as_str()+"         ▀▀▓▓▓▓▓▓▄".truecolor(255, 50, 0).to_string()+"    ▀▓▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▓".truecolor(75, 200, 0).to_string().as_str()+"     ▄▓▓▓▓▓▓▀▀".truecolor(160, 0, 200).to_string().as_str()+"        ▄▓▓▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▒▒▒▒▒▒▒▒▒▓▄".truecolor(0, 200, 160).to_string().as_str()+"        ▀▓▓▓▓▓▄".truecolor(255, 50, 0).to_string()+"    ▓▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▀".truecolor(75, 200, 0).to_string().as_str()+"    ▄▓▓▓▓▓▀".truecolor(160, 0, 200).to_string().as_str()+"       ▄▄▓▒▒▒▒▒▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
- ▒▓▓▓▒▒▒▒▒▒▒▒▒▒▓▄▄".truecolor(0, 200, 160).to_string().as_str()+"      ▀▓▓▓▄".truecolor(255, 50, 0).to_string()+"    ▀▓▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▓".truecolor(75, 200, 0).to_string().as_str()+"     ▓▓▓▀▀".truecolor(160, 0, 200).to_string().as_str()+"      ▄▓▓▒▒▒▒▒▒▒▒▒▓▓▓▓▌".truecolor(200, 160, 0).to_string().as_str()+"
-          ▀▀▓▓▒▒▒▒▒▓▄".truecolor(0, 200, 160).to_string().as_str()+"      ▀▓▓▄".truecolor(255, 50, 0).to_string()+"    ▓▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▄▓▀".truecolor(160, 0, 200).to_string().as_str()+"      ▄▓▓▒▒▒▒▓▓▓▀▀".truecolor(200, 160, 0).to_string().as_str()+"
-                  ▀▓▓▒▓▄".truecolor(0, 200, 160).to_string().as_str()+"      ▀▄".truecolor(255, 50, 0).to_string()+"    ▓▒".truecolor(0, 120, 200).to_string().as_str()+"    ▐▒".truecolor(75, 200, 0).to_string().as_str()+"     ▓▀".truecolor(160, 0, 200).to_string().as_str()+"     ▄▓▓▒▓▓▀▀".truecolor(200, 160, 0).to_string().as_str()+"
-                       ▀▀▓▄".truecolor(0, 200, 160).to_string().as_str()+"          ▀".truecolor(0, 120, 200).to_string().as_str()+"    ▐".truecolor(75, 200, 0).to_string().as_str()+"           ▄▓▀▀".truecolor(200, 160, 0).to_string().as_str()+"
+          ▓▓▄▄".truecolor(255, 50, 0).to_string().as_str()+"     ▒▒▒▒▒▒▒▒▓▄".truecolor(0, 120, 200).to_string().as_str()+"                      ▄▓▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"     ▄▄▓▌".truecolor(160, 0, 200).to_string().as_str()+"
+          ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"                    ▓▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▌".truecolor(160, 0, 200).to_string().as_str()+"
+          ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▓▄".truecolor(0, 120, 200).to_string().as_str()+"                ▄▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"
+ ▄▄▄  ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▄".truecolor(0, 120, 200).to_string().as_str()+"              ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"     ▄▄▄".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"            ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"          ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"        ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓".truecolor(0, 120, 200).to_string().as_str()+"      ▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄".truecolor(0, 120, 200).to_string().as_str()+"    ▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▐▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(75, 200, 0).to_string().as_str()+"    ▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▌".truecolor(255, 50, 0).to_string().as_str()+"     ▓▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓▀".truecolor(75, 200, 0).to_string().as_str()+"     ▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▓▓▄".truecolor(255, 50, 0).to_string().as_str()+"     ▀▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓".truecolor(75, 200, 0).to_string().as_str()+"      ▄▓▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▓▓▓▓▄".truecolor(255, 50, 0).to_string().as_str()+"      ▓▒▒▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▒▒▀".truecolor(75, 200, 0).to_string().as_str()+"     ▄▓▓▓▓▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"    ▓▓▓▓▓▓▓▓▓▓▓▄".truecolor(255, 50, 0).to_string().as_str()+"     ▓▒▒▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▒▒▀".truecolor(75, 200, 0).to_string().as_str()+"     ▄▓▓▓▓▓▓▓▓▓▓▓".truecolor(160, 0, 200).to_string().as_str()+"    ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒ ".truecolor(0, 200, 160).to_string().as_str()+"       ▀▓▓▓▓▓▓▓▓▓▄".truecolor(255, 50, 0).to_string().as_str()+"     ▓▒▒▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▒▒▓".truecolor(75, 200, 0).to_string().as_str()+"     ▄▓▓▓▓▓▓▓▓▀▀".truecolor(160, 0, 200).to_string().as_str()+"       ▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒▓▄ ".truecolor(0, 200, 160).to_string().as_str()+"         ▀▀▓▓▓▓▓▓▄".truecolor(255, 50, 0).to_string().as_str()+"    ▀▓▒▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▒▓".truecolor(75, 200, 0).to_string().as_str()+"     ▄▓▓▓▓▓▓▀▀".truecolor(160, 0, 200).to_string().as_str()+"        ▄▓▓▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▒▒▒▒▒▒▒▒▒▒▓▄".truecolor(0, 200, 160).to_string().as_str()+"        ▀▓▓▓▓▓▄".truecolor(255, 50, 0).to_string().as_str()+"    ▓▒▒▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▒▒▀".truecolor(75, 200, 0).to_string().as_str()+"    ▄▓▓▓▓▓▀".truecolor(160, 0, 200).to_string().as_str()+"       ▄▄▓▒▒▒▒▒▒▒▒▒▌".truecolor(200, 160, 0).to_string().as_str()+"
+▐▓▓▓▓▒▒▒▒▒▒▒▒▒▒▓▄▄".truecolor(0, 200, 160).to_string().as_str()+"      ▀▓▓▓▄".truecolor(255, 50, 0).to_string().as_str()+"    ▀▓▒▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▒▓".truecolor(75, 200, 0).to_string().as_str()+"     ▓▓▓▀▀".truecolor(160, 0, 200).to_string().as_str()+"      ▄▓▓▒▒▒▒▒▒▒▒▒▓▓▓▓▌".truecolor(200, 160, 0).to_string().as_str()+"
+          ▀▀▓▓▒▒▒▒▒▓▄".truecolor(0, 200, 160).to_string().as_str()+"      ▀▓▓▄".truecolor(255, 50, 0).to_string().as_str()+"    ▓▒▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▒▒▓".truecolor(75, 200, 0).to_string().as_str()+"    ▄▓▀".truecolor(160, 0, 200).to_string().as_str()+"      ▄▓▓▒▒▒▒▓▓▓▀▀".truecolor(200, 160, 0).to_string().as_str()+"
+                  ▀▓▓▒▓▄".truecolor(0, 200, 160).to_string().as_str()+"      ▀▄".truecolor(255, 50, 0).to_string().as_str()+"    ▓▒".truecolor(0, 120, 200).to_string().as_str()+"    ▒▓".truecolor(75, 200, 0).to_string().as_str()+"     ▓▀".truecolor(160, 0, 200).to_string().as_str()+"     ▄▓▓▒▓▓▀▀".truecolor(200, 160, 0).to_string().as_str()+"
+                       ▀▀▓▄".truecolor(0, 200, 160).to_string().as_str()+"          ▀".truecolor(0, 120, 200).to_string().as_str()+"    ▀".truecolor(75, 200, 0).to_string().as_str()+"            ▄▓▀▀".truecolor(200, 160, 0).to_string().as_str()+"
                            ▀".truecolor(0, 200, 160).to_string().as_str()+"                         ▀".truecolor(200, 160, 0).to_string().as_str() } else { String::new() };
     App::new(crate_name!())
         .version(crate_version!())
@@ -63,172 +63,69 @@ pub fn build_cli(show_logo: bool) -> App<'static, 'static> {
         // .global_setting(AppSettings::DisableHelpSubcommand)
         .setting(AppSettings::SubcommandRequiredElseHelp)
         .arg(
-            Arg::with_name("configs")
-                .long("configs")
-                .value_name("PATH")
-                .help("specify a dir to load color configs from")
-                .takes_value(true)
-                .set(ArgSettings::RequireEquals)
+            Arg::with_name("config")
+                .short("c")
+                .long("config")
+                .value_name("FILE")
+                .help("Sets a custom config file")
+                .takes_value(true),
         )
         .arg(
-            Arg::with_name("cache")
-                .long("cache")
+            Arg::with_name("library")
+                .short("l")
+                .long("lib")
                 .value_name("PATH")
-                .help("specify a dir where to dump color caches")
-                .takes_value(true)
-                .set(ArgSettings::RequireEquals)
-        )
-        .arg(
-            Arg::with_name("pattern")
-                .long("pattern")
-                .value_name("PATH")
-                .help("specify a path to substitute pattern colors")
-                .takes_value(true)
-                .multiple(true)
-                .set(ArgSettings::RequireEquals)
-        )
-        .arg(
-            Arg::with_name("script")
-                .long("script")
-                .value_name("PATH:PATH")
-                .help("specify a script to run afte colors are generated")
-                .takes_value(true)
-                .multiple(true)
-                .set(ArgSettings::RequireEquals)
+                .help("Sets a custom path for the libraries")
+                .takes_value(true),
         )
         .subcommand(
-            SubCommand::with_name("create")
-                .about("Generate new colors from an image")
+            SubCommand::with_name("add")
+                .about("Adds a document into a given library")
                 .arg(
-                    Arg::with_name("wallpath")
-                        .help("specify a folder to pick an image randomly")
-                        .long("wallpath")
-                        .visible_aliases(&["path"])
+                    Arg::with_name("from")
+                        .help("Add document from a specific importer")
+                        .short("f")
+                        .long("from")
                         .takes_value(true)
-                        .value_name("DIRPATH")
-                        .conflicts_with("image")
-                        .set(ArgSettings::RequireEquals)
+                        .value_name("TYPE"),
                 )
                 .arg(
-                    Arg::with_name("palette")
-                        .help("specify a palete generator for colors")
-                        .long("palette")
-                        .takes_value(true)
-                        .possible_values(&["schemer2", "pigment"])
-                        .default_value("pigment")
-                        .value_name("NAME")
-                        .set(ArgSettings::RequireEquals)
-                )
-                .arg(
-                    Arg::with_name("scheme")
-                        .long("scheme")
-                        .value_name("NAME")
-                        .help("specify a color scheme from configs to use")
-                        .takes_value(true)
-                        .set(ArgSettings::RequireEquals)
-                )
-                .arg(
-                    Arg::with_name("image")
-                        .help("specify the image to extract colors from")
-                        .long("image")
-                        .visible_aliases(&["source"])
-                        .takes_value(true)
-                        .value_name("FLEPATH")
-                        .conflicts_with("wallpath")
-                        .set(ArgSettings::RequireEquals)
-                )
-                .arg(
-                    Arg::with_name("theme")
-                        .help("specify the theme to extract from colors")
-                        .long("theme")
-                        .takes_value(true)
-                        .value_name("THEME")
-                        .possible_values(&["dark", "light"])
-                        .default_value("dark")
-                        .set(ArgSettings::RequireEquals)
-                )
-                .arg(
-                    Arg::with_name("action")
-                        .help("action to take")
-                        .possible_values(&["set", "regen"])
-                        .takes_value(true)
-                        .last(true)
-                )
+                    Arg::with_name("input")
+                        .help("the file to add")
+                        .index(1)
+                        .required(true),
+                ),
         )
         .subcommand(
-            SubCommand::with_name("daemon")
-                .about("Run as deamon process with looping wallpapers")
-                .arg(
-                    Arg::with_name("loop")
-                        .help("Loop time in seconds for new gneration")
-                        .long("loop")
-                        .takes_value(true)
-                        .default_value("300")
-                        .value_name("SECONDS")
-                        .set(ArgSettings::RequireEquals)
-                )
-                .arg(
-                    Arg::with_name("action")
-                        .help("action to take")
-                        .possible_values(&["start", "stop", "detach"])
-                        .takes_value(true)
-                        .required(true)
-                        .last(true)
-                )
+            SubCommand::with_name("edit")
+                .about("Edit document information from a given library")
         )
         .subcommand(
-            SubCommand::with_name("colors")
-                .about("Display current colors in terminal")
-                .arg(
-                    Arg::with_name("gen")
-                        .help("generate new colors - just show them - not apply")
-                        .short("g")
-                )
-                .arg(
-                    Arg::with_name("action")
-                        .help("action to take")
-                        .possible_values(&["image", "ansii", "list", "mix"])
-                        .default_value("ansii")
-                        .required(true)
-                        .takes_value(true)
-                        .last(true)
-                )
+            SubCommand::with_name("browse")
+                .about("Open document's url in a browser")
         )
         .subcommand(
-            SubCommand::with_name("config")
-                .about("Send specific configs to pipe or daemon")
-                .arg(
-                    Arg::with_name("theme")
-                        .help("specify the theme to extract from colors")
-                        .long("theme")
-                        .takes_value(true)
-                        .value_name("THEME")
-                        .possible_values(&["dark", "light"])
-                        .default_value("dark")
-                        .required(true)
-                        .set(ArgSettings::RequireEquals)
-                )
+            SubCommand::with_name("export")
+                .about("Export a document from a given library")
         )
         .subcommand(
-            SubCommand::with_name("test")
-                .setting(AppSettings::Hidden)
-                .arg(
-                    Arg::with_name("image")
-                        .help("specify the image to extract colors from")
-                        .long("image")
-                        .visible_aliases(&["source"])
-                        .takes_value(true)
-                        .value_name("FLEPATH")
-                        .set(ArgSettings::RequireEquals)
-                )
-                .arg(
-                    Arg::with_name("pattern")
-                        .long("pattern")
-                        .value_name("PATH")
-                        .help("specify a path to substitute pattern colors")
-                        .takes_value(true)
-                        .multiple(true)
-                        .set(ArgSettings::RequireEquals)
-                )
+            SubCommand::with_name("move")
+                .about("Move a document into some other path")
+        )
+        .subcommand(
+            SubCommand::with_name("delete")
+                .about("Delete a document from a library")
+        )
+        .subcommand(
+            SubCommand::with_name("list")
+                .about("List to STDOUT documents of a library")
+        )
+        .subcommand(
+            SubCommand::with_name("show")
+                .about("Show all documents in a TUI environment")
+        )
+        .subcommand(
+            SubCommand::with_name("help")
+                .about("Show all documents in a TUI environment")
         )
 }
