@@ -7,7 +7,7 @@ use getset::{CopyGetters, Getters, MutGetters, Setters};
 #[getset(get = "pub", set = "pub", get_mut = "pub")]
 pub struct SCHEME {
     #[serde(skip)]
-    walldir: Option<String>,
+    library: Option<String>,
     #[serde(skip)]
     config: Option<String>,
 }
@@ -15,12 +15,12 @@ pub struct SCHEME {
 impl SCHEME {
     pub fn init() -> Self {
         Self {
-            walldir: None,
+            library: None,
             config: None,
         }
     }
     pub fn modi(&mut self, new: &SCHEME) -> &Self {
-        if let Some(value) = new.walldir() { self.walldir = Some(value.clone()); }
+        if let Some(value) = new.library() { self.library = Some(value.clone()); }
         if let Some(value) = new.config() { self.config = Some(value.clone()); }
         self
     }
